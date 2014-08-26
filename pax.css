@@ -27,7 +27,9 @@ h1, h2, h3 {
 }
 .active {
   fill: red;
+  background-position: center;
 }
+
 .highlight {
   border: #ce1d24 4px solid;
   width: 10px;
@@ -39,7 +41,7 @@ h1, h2, h3 {
   z-index: 9000;
 }
 
-.allsections {
+.allsections, .allbooths {
   border: #ce1d24 4px solid;
   width: 10px;
   height: 10px;

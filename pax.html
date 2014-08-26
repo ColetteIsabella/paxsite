@@ -517,25 +517,23 @@
 <br />
 <h3>Managers:</h3>
   <select>
-    <option>S.A.B.A. ("tel:","314-795-4380")</option>
-    <option>ChronoHawk ("tel:","413-636-4380")</option>
-    <option>Spyder Z ("tel:","425-286-4538")</option>
+    <option>S.A.B.A. (314-795-4380)</option>
+    <option>ChronoHawk (413-636-4380)</option>
+    <option>Spyder Z (425-286-4538)</option>
   </select>
 
 <h3>Deputy Managers:</h3>
   <select>
-    <option>PlaidLad ("tel:","512-633-5060")</option>
-    <option>RobberTom ("tel:"248-797-1699"")</option>
-    <option>Ricter ("tel:"253-495-7424"")</option>
+    <option>PlaidLad (512-633-5060)</option>
+    <option>RobberTom (248-797-1699)</option>
+    <option>Ricter (253-495-7424)</option>
   </select>
 
 <form class="searchExpo" onsubmit="return false;">
 
-
-  <p>Search: <input type="text" class="match"><input type="button" value="Search" onclick="showMatches()"></p>
-
-  <p>All Sections:</p>
+<div id="allsections">
   <select class="section">
+    <option value="allsections">All Sections</option>
     <option value="s1">Section 1</option>
     <option value="s2">Section 2</option>
     <option value="s3">Section 3</option>
@@ -562,27 +560,44 @@
     <option value="s24">Section 24</option>
     <option value="s25">Section 25</option>
   </select>
+</div>
 
-  <p>Search All Zones: <input type="button" value="Zones" onclick="showZones()"></p>
-  <p>Clear All: <input type="button" value="Clear" onclick="clearAll()"></p>
+  <p>All Zones:</p>
+  <select class="zones">
+    <option value="sec1">Zone 1</option>
+    <option value="sec2">Zone 2</option>
+    <option value="sec3">Zone 3</option>
+    <option value="sec4">Zone 4</option>
+  </select>
 
+  <select class="booth">
+  <option value="booth">All Booths</option>
+  <option value="b3342">Comcast</option>
+  <option value="b3630">Square Enix</option>
+  </select>
+
+  <p><input type="button" value="Clear" onclick="clearAll()"></p>
+
+  <p>Search: <input type="text" name="match" id="match">
+  <input type="button" value="Search" onclick="showMatches()">
+    <span id="keywords"></span>
+  </p>
   <div class="matches">
-    <p>XA: <span id="xaname"></span>
-     ( <span id="xacontact"><a href="exhibitors.assistantContact"></a></span> )
-      ZL: <span id="zlname"><a href="exhibitors.zoneLeader"></a></span>  (<span id="zlcontact"><a href="exhibitors.leaderContact"></a></span>)</p>
-  </div>
-  <div>
-    <p>Keywords: <span id="keywords"></span></p>
+      <p>XA: <span id="xaname"></span>
+     ( <span id="xacontact"></span> )
+      ZL: <span id="zlname"></a></span>(
+      <span id="zlcontact"></a></span>)</p>
   </div>
   </form>
 
   <div class="highlight" target="_new" onclick="clearHighlight();" style="width: relative; height:relative;"></div>
-  <div class="error" onclick="clearError();" style="display:none;"></div>
-</div>
+
+
 
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="pax.js"></script>
 <script type="text/javascript" src="map.js"></script>
+</div>
 
 <footer><h5> MIT open license, share with permission, share with credit: <a href="colettetaylor.com">Colette Taylor 2014 </a>, based on Copywrited work by <a href="http://geekatlarge.net/">geekatlarge</a></h5></footer>
 </body>

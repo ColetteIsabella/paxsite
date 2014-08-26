@@ -436,8 +436,84 @@ var exhibitors = [
     "exhibitorKeywords":"" },
 
 
-]
-$(".matches").match(function() {
-    var showMatches = exhibitors.match(xaname:exhibitorAssistant)
-    });
+];
+
+function showMatches() {
+  clearError();
+  var hitCounter = 0;
+  var searchString = document.getElementById("match").value;
+  for (i=0; i<exhibitors.length; i++) {
+    if ((searchString.trim() !== "") && ((exhibitors[i].boothNumber == searchString) || (exhibitors[i].exhibitorName.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) || (exhibitors[i].exhibitorKeywords.toLowerCase().indexOf(searchString.toLowerCase()) !== -1))) {
+      hitCounter++;
+      document.getElementById(i).style.display = "block";
+    }
+  }
+  if (hitCounter > 0) {
+    clearForm();
+  } else {
+    if(searchString.trim() != "") document.getElementById("error").style.display = "block";
+  }
+  console.log ("xaname")
+}
+
+document.getElementById("keywords").textContent = exhibitors[boothID].exhibitorName + " [" + exhibitors[boothID].exhibitorKeywords + "]";
+
+document.getElementById("xaname").textContent = exhibitors[boothID].exhibitorAssistant;
+document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].assistantContact + "'>" + exhibitors[boothID].assistantContact + "</a>";
+document.getElementById("zlname").textContent = exhibitors[boothID].zoneLeader;
+document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].leaderContact + "'>" + exhibitors[boothID].leaderContact + "</a>";
+
+
+function clearHighlight() {
+  document.getElementById("highlight").style.display = "no";
+  document.getElementById("keywords").textContent = "No Exhibitor Selected";
+}
+
+function clearForm() {
+  document.getElementById("matches").value = "";
+}
+
+function clearAll() {
+  clearHighlight();
+  clearSections();
+  clearMatches();
+  clearForm();
+}
+
+function showSections() {
+  document.getElementById("allsections").style.display = "block";
+}
+
+function clearSections() {
+  for (i=0; i<exhibitors.length; i++) {
+    document.getElementById("section" + i).style.display ="none";
+  }
+}
+
+//for (i=1; i<=47; i++) {
+//  document.write("<div onclick='showSection(" + i + ");'>Section " + i + "</div>");
+//}
+
+
+//for (i=1; i<=5; i++) {
+//  document.write("<div onclick='showZone(" + i + ");'>Zone " + i + "</div>");
+//}
+
+function showZones() {
+  document.getElementById("allzones").style.display = "none";
+}
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
