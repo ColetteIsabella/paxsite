@@ -12,20 +12,15 @@
 <meta name="apple-touch-startup-image" href="startup.png">
 
 <style type="text/css"></style>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="pax.js"></script>
-<script type="text/javascript" src="map.js"></script>
 
-<style type="text/css" src="pax.css"></style>
+<link rel="stylesheet" href="pax.css">
 </head>
 <body>
+
 <h1>Expo Map PAX 2014</h1>
 
 <!-- These maps are in svg format, you will want to switchout the floor plans, but if you stick with the naming conventions, it should work with any svg file-->
 <h2>Fourth Floor, South</h2>
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="405px"
    height="515.7px" viewBox="0 0 405 515.7" enable-background="new 0 0 405 515.7" xml:space="preserve">
 <g id="Layer_1">
@@ -134,12 +129,10 @@
 </g>
 </svg>
 <br />
+
 <h2>Fourth Floor, North</h2>
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="640px"
-   height="507.8px" viewBox="0 0 640 507.8" enable-background="new 0 0 640 507.8" xml:space="preserve">
+   height="507.8px" viewBox="0 0 640 507.8" enable-background="new 0 0 640 507.8" >
 <g id="Layer_1">
 </g>
 <g id="floors">
@@ -356,9 +349,6 @@
 <br />
 
 <h2>Sixth Floor</h2>
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="493px"
    height="453px" viewBox="0 0 493 453" enable-background="new 0 0 493 453" xml:space="preserve">
 <g id="Layer_1">
@@ -520,40 +510,66 @@
 <g id="labels" display="none">
 </g>
 </svg>
-
 <br />
-<h3>Top-Level Contacts:</h3>
-  <select>
-    <option>S.A.B.A. (314-795-4380)</option>
-    <option>ChronoHawk ()</option>
-    <option>PlaidLad (512-633-5060)</option>
-    <option>RobberTom (248-797-1699)</option>
-    <option>Fae ()</option>
-    <option>Spyder ()</option>
-  </select>
-<form class="searchExpo" onsubmit="return false;">
-  <h2>PAX Prime Navigator 2014</h2>
 
-  <p>Search: <input type="text" name="match" id="match"><input type="button" value="Search" onclick="showMatches()"></p>
+<div class="controls">
+<header><h2>PAX Prime Navigator 2014</h2></header>
+<br />
+<h3>Managers:</h3>
+  <select>
+    <option>S.A.B.A. ("tel:","314-795-4380")</option>
+    <option>ChronoHawk ("tel:","413-636-4380")</option>
+    <option>Spyder Z ("tel:","425-286-4538")</option>
+  </select>
+
+<h3>Deputy Managers:</h3>
+  <select>
+    <option>PlaidLad ("tel:","512-633-5060")</option>
+    <option>RobberTom ("tel:"248-797-1699"")</option>
+    <option>Ricter ("tel:"253-495-7424"")</option>
+  </select>
+
+<form class="searchExpo" onsubmit="return false;">
+
+
+  <p>Search: <input type="text" class="match"><input type="button" value="Search" onclick="showMatches()"></p>
 
   <p>All Sections:</p>
-  <select onchange="location = this.options[this.selectedIndex].value;">
-  <option class "section" value="#s1">Section 1</option>
-  <option class "section" value="#s2">Section 2</option>
-  <option value="#s3">Section 3</option>
-  <option value="#s4">Section 4</option>
-  <option value="#s5">Section 5</option>
-  <option value="#s6">Section 6</option>
-  <option value="#s7">Section 7</option>
-  <option value="#s8">Section 8</option>
-  <option value="#s9">Section 9</option>
+  <select class="section">
+    <option value="s1">Section 1</option>
+    <option value="s2">Section 2</option>
+    <option value="s3">Section 3</option>
+    <option value="s4">Section 4</option>
+    <option value="s5">Section 5</option>
+    <option value="s6">Section 6</option>
+    <option value="s7">Section 7</option>
+    <option value="s8">Section 8</option>
+    <option value="s9">Section 9</option>
+    <option value="s10">Section 10</option>
+    <option value="s11">Section 11</option>
+    <option value="s12">Section 12</option>
+    <option value="s13">Section 13</option>
+    <option value="s14">Section 14</option>
+    <option value="s15">Section 15</option>
+    <option value="s16">Section 16</option>
+    <option value="s17">Section 17</option>
+    <option value="s18">Section 18</option>
+    <option value="s19">Section 19</option>
+    <option value="s20">Section 20</option>
+    <option value="s21">Section 21</option>
+    <option value="s22">Section 22</option>
+    <option value="s23">Section 23</option>
+    <option value="s24">Section 24</option>
+    <option value="s25">Section 25</option>
   </select>
+
   <p>Search All Zones: <input type="button" value="Zones" onclick="showZones()"></p>
-  <p>Clear All Markers: <input type="button" value="Clear" onclick="clearAll()"></p>
-  <div>
-    <p>XA: <span id="xaname"><a href=""></a></span>
-    " (" <span id="xacontact"><a href=""></a></span>") "
-    "  ZL: "<span id="zlname"><a href=""></a></span> " ("<span id="zlcontact"><a href=""></a></span>")"</p>
+  <p>Clear All: <input type="button" value="Clear" onclick="clearAll()"></p>
+
+  <div class="matches">
+    <p>XA: <span id="xaname"></span>
+     ( <span id="xacontact"><a href="exhibitors.assistantContact"></a></span> )
+      ZL: <span id="zlname"><a href="exhibitors.zoneLeader"></a></span>  (<span id="zlcontact"><a href="exhibitors.leaderContact"></a></span>)</p>
   </div>
   <div>
     <p>Keywords: <span id="keywords"></span></p>
@@ -562,7 +578,11 @@
 
   <div class="highlight" target="_new" onclick="clearHighlight();" style="width: relative; height:relative;"></div>
   <div class="error" onclick="clearError();" style="display:none;"></div>
+</div>
 
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="pax.js"></script>
+<script type="text/javascript" src="map.js"></script>
 
 <footer><h5> MIT open license, share with permission, share with credit: <a href="colettetaylor.com">Colette Taylor 2014 </a>, based on Copywrited work by <a href="http://geekatlarge.net/">geekatlarge</a></h5></footer>
 </body>

@@ -2,6 +2,7 @@
 //and info for your PAX, I advise setting up a
 //spreadsheet in GoogleDocs, so it can be referred
 //to fo quicker reference.
+$(document).ready(function() {
 
 var exhibitors = [
   { "boothNumber":"3342",
@@ -9,17 +10,17 @@ var exhibitors = [
     "sectionNumber":"1",
     "zoneNumber":"1",
     "exhibitorAssistant":"Van",
-    "assistantContact":"",
+    "assistantContact":"216-926-4997",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
-    "exhibitorKeywords":"" },
+    "exhibitorKeywords":"internet, Comcast" },
 
   { "boothNumber":"3344",
     "exhibitorName":"Corsair",
     "sectionNumber":"1",
     "zoneNumber":"1",
     "exhibitorAssistant":"Van",
-    "assistantContact":"",
+    "assistantContact":"216-926-4997",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
     "exhibitorKeywords":"" },
@@ -29,7 +30,7 @@ var exhibitors = [
     "sectionNumber":"1",
     "zoneNumber":"1",
     "exhibitorAssistant":"Van",
-    "assistantContact":"",
+    "assistantContact":"216-926-4997",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
     "exhibitorKeywords":"" },
@@ -39,7 +40,7 @@ var exhibitors = [
     "sectionNumber":"1",
     "zoneNumber":"1",
     "exhibitorAssistant":"Van",
-    "assistantContact":"",
+    "assistantContact":"216-926-4997",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
     "exhibitorKeywords":"" },
@@ -69,7 +70,7 @@ var exhibitors = [
     "sectionNumber":"3",
     "zoneNumber":"1",
     "exhibitorAssistant":"Checkmate",
-    "assistantContact":"",
+    "assistantContact":"425-773-9874",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
     "exhibitorKeywords":"" },
@@ -79,10 +80,14 @@ var exhibitors = [
     "sectionNumber":"3",
     "zoneNumber":"1",
     "exhibitorAssistant":"Checkmate",
-    "assistantContact":"",
+    "assistantContact":"425-773-9874",
     "zoneLeader":"WingedVictory",
     "leaderContact":"440-840-5487",
-    "exhibitorKeywords":"" },
+    "exhibitorKeywords":"sony, " },
 
 
 ]
+$(".matches").match(function() {
+    var showMatches = exhibitors.match(xaname:exhibitorAssistant)
+    });
+});
