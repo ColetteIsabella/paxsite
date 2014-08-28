@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <!--Unless otherwise noted, all code can be reused for any other PAX event, just change out area or year as applicable. -->
 <head>
 <title>PAX Prime 2014</title>
@@ -12,6 +13,7 @@
 <meta name="apple-touch-startup-image" href="startup.png">
 
 <style type="text/css"></style>
+<link href="select2.css" rel="stylesheet"/>
 
 <link rel="stylesheet" href="pax.css">
 </head>
@@ -529,74 +531,125 @@
     <option>Ricter (253-495-7424)</option>
   </select>
 
-<form class="searchExpo" onsubmit="return false;">
+<form class="searchform" onsubmit="return false;">
+  <div>
+  <input type="text" name="match" id="match">
+  <input type="button" value="Search" onclick="showMatches()"></div>
 
-<div id="allsections">
-  <select class="section">
+  <input type="button" value="Clear" onclick="clearAll()">
+
+  <div style="margin-top:10px;">
+    XA: <span id="xaname"></span> ( <span id="xacontact"></span> ) ZL: <span id="zlname"></span> (<span id="zlcontact"></span> )
+    </div>
+
+    <div id="allsections">
+  <select class="section" id="el">
     <option value="allsections">All Sections</option>
-    <option value="s1">Section 1</option>
-    <option value="s2">Section 2</option>
-    <option value="s3">Section 3</option>
-    <option value="s4">Section 4</option>
-    <option value="s5">Section 5</option>
-    <option value="s6">Section 6</option>
-    <option value="s7">Section 7</option>
-    <option value="s8">Section 8</option>
-    <option value="s9">Section 9</option>
-    <option value="s10">Section 10</option>
-    <option value="s11">Section 11</option>
-    <option value="s12">Section 12</option>
-    <option value="s13">Section 13</option>
-    <option value="s14">Section 14</option>
-    <option value="s15">Section 15</option>
-    <option value="s16">Section 16</option>
-    <option value="s17">Section 17</option>
-    <option value="s18">Section 18</option>
-    <option value="s19">Section 19</option>
-    <option value="s20">Section 20</option>
-    <option value="s21">Section 21</option>
-    <option value="s22">Section 22</option>
-    <option value="s23">Section 23</option>
-    <option value="s24">Section 24</option>
-    <option value="s25">Section 25</option>
+    <option value="s1">Sec. 1 XA: Van (216-926-4997)</option>
+    <option value="s2">Sec. 2 XA: Virus (203-383-3023)</option>
+    <option value="s3">Sec. 3 XA: CheckMate (425-773-9874)</option>
+    <option value="s4">Sec. 4 XA: Winged Victory (440-840-5487)</option>
+    <option value="s5">Sec. 5 XA: EvantheSquirrel (508-360-7335)</option>
+    <option value="s6">Sec. 6 XA: Azazel (530-318-1768)</option>
+    <option value="s7">Sec. 7 XA: Dannicus (952-393-3314)</option>
+    <option value="s8">Sec. 8 XA: Mori-Neko (310-713-3225)</option>
+    <option value="s9">Sec. 9 XA: Mr. Sandman (425-770-5635)</option>
+    <option value="s10">Sec. 10 XA: LordOwen (336-688-8019)</option>
+    <option value="s11">Sec. 11 XA: Kurpov (425-443-8775)</option>
+    <option value="s12">Sec. 12 XA: Valkyrion (401-787-4982)</option>
+    <option value="s13">Sec. 13 XA: Loki (248-535-7778)</option>
+    <option value="s14">Sec. XA: Oroso (360-213-3341)</option>
+    <option value="s15">Sec. 15 XA: The Jaxx (253-335-9469)</option>
+    <option value="s16">Sec. 16 XA: UberBeth (253-217-1095)</option>
+    <option value="s17">Sec. 17 XA: DisFireCo (480-204-4561)</option>
+    <option value="s18">Sec. 18 XA: TwoTone (425-205-0355)</option>
+    <option value="s19">Sec. 19 XA: TheGleep (425-281-6431)</option>
+    <option value="s20">Sec. 20 XA: pip (206-963-6864)</option>
+    <option value="s21">Sec. 21 XA: aurora corealis (360-621-6860)</option>
+    <option value="s22">Sec. 22 XA: Ysterath (607-339-1279)</option>
+    <option value="s23">Sec. 23 Raptor (206-226-6736)</option>
+    <option value="s24">Sec. 24 XA: Cag Master (305-873-3727)</option>
+    <option value="s25">Sec. 25 XA: ingrid (617-501-5609)</option>
+    <option value="s26">Sec. 26 XA: Scarecrow (509-464-9400)</option>
+    <option value="s27">Sec. 27 XA: wildfire (510-356-7429)</option>
+    <option value="s28">Sec. 28 XA: Tajah (206-459-9719)</option>
+    <option value="s29">Sec. 29 XA: Hex (774-254-6214)</option>
+    <option value="s30">Sec. 30 XA: Fluffums (763-355-4118)</option>
+    <option value="s31">Sec. 31 XA: Juggernaut (206-235-5512)</option>
+    <option value="s32">Sec. 32 XA: Anthonysc (253-347-2806)</option>
+    <option value="s33">Sec. 33 XA: fanboy (604-537-4635)</option>
+    <option value="s34">Sec. 34 XA: Jinka (253-335-6296)</option>
+    <option value="s35">Sec. 35 XA: MetalGojira (206-380-1830)</option>
+    <option value="s36">Sec. 36 XA: Celt (206-335-2453)</option>
+    <option value="s37">Sec. 37 XA: ImTearable (702-738-7426)</option>
+    <option value="s38">Sec. 38 XA: Mark (904-210-4966)</option>
+    <option value="s39">Sec. 39 XA: ChainD (734-277-9995)</option>
+    <option value="s40">Sec. 40 XA: Bee (303-589-1794)</option>
+    <option value="s41">Sec. 41 XA: Asuko (607-296-0326)</option>
+    <option value="s42">Sec. 42 XA: CptnSpaulding (508-353-7996)</option>
+    <option value="s43">Sec. 43 XA: Sheeran (970-391-3988)</option>
+    <option value="s44">Sec. 44 XA: Lizard (541-297-1132)</option>
+    <option value="s45">Sec. 45 XA: MackJ (206-370-2494)</option>
   </select>
 </div>
+<div onclick="hideSections();"></div>
 
-  <p>All Zones:</p>
-  <select class="zones">
-    <option value="sec1">Zone 1</option>
-    <option value="sec2">Zone 2</option>
-    <option value="sec3">Zone 3</option>
-    <option value="sec4">Zone 4</option>
+  <select class="zones" id="el">
+    <option value="allzones">All Zones</option>
+    <option value="sec2">Z. 1 ZL: Winged Victory (440-840-5487)</option>
+    <option value="sec2">Z. 2 ZL: Dannicus (952-393-3314)</option>
+    <option value="sec3">Z. 3 ZL: Loki (248-535-7778)</option>
+    <option value="sec4">Z. 4 ZL: </option>
+    <option value="sec4">Z. 5 ZL: The Gleep (425-281-6431)</option>
+    <option value="sec4">Z. 6 ZL: Raptor (206-226-6736)</option>
+    <option value="sec4">Z. 7 ZL: fanboy (604-537-4635)</option>
   </select>
 
-  <select class="booth">
-  <option value="booth">All Booths</option>
-  <option value="b3342">Comcast</option>
-  <option value="b3630">Square Enix</option>
+  <select class="booth" id="el">
+    <option value="booth">All Booths</option>
+    <option value="b3342">Comcast(3342) XA: Van (216-926-4997)</option>
+    <option value="b3344">Corsair(3344)  XA: Van (216-926-4997)</option>
+    <option value="b2446">Machinima(3446)  XA: Van (216-926-4997)</option>
+    <option value="b3444">Klei(3444)  XA: Van (216-926-4997)</option>
+
+    <option value="b3630">Square Enix(3631) XA: Virus (203-383-3023) </option>
+    <option value="b3646">S2 Games(3646) XA: Virus (203-383-3023)</option>
+
+    <option value="b3330">Xaviant(3330) XA: Checkmate (203-383-3023)</option>
+    <option value="b3625">Sony Online Entertainment(3625) XA: Checkmate (203-383-3023)</option>
+    <option value="b3834">Gunnar Optiks(3834) XA: Checkmate (203-383-3023)</option>
+    <option value="b3828">Logitech(Sat. 3828) XA: Checkmate (203-383-3023)</option>
+    <option value="b3822">Sanshee(3822) XA: Checkmate (203-383-3023)</option>
+
+    <option value="b3603">Wargaming.net(3603) XA: Winged Victory (440-840-5487)</option>
+    <option value="b3617">Wargaming.net(3617) XA: Winged Victory (440-840-5487)</option>
+    <option value="b3808">UDON(3808) XA: Winged Victory (440-840-5487)</option>
+    <option value="b3810">Flying Frog(3810) XA: Winged Victory (440-840-5487)</option>
+    <option value="b3812">Plyngo(3812) XA: Winged Victory (440-840-5487)</option>
+
+    <option value="b3403">Twitch TV(3403) XA: Evanthesquirrel (508-360-7335)</option>
+    <option value="b3417">Pokemon(3417) XA: Evanthesquirrel (508-360-7335)</option>
+    <option value="b3411">Kixeye(3411) XA: Evanthesquirrel (508-360-7335)</option>
+
+    <option value="b3017">Telltale Games(3017) XA: Azazel (530-318-1768)</option>
+    <option value="b3117">Skull Candy(3117) XA: Azazel (530-318-1768)</option>
+    <option value="b3217">Capcom(3217) XA: Azazel (530-318-1768)</option>
+
   </select>
 
-  <p><input type="button" value="Clear" onclick="clearAll()"></p>
 
-  <p>Search: <input type="text" name="match" id="match">
-  <input type="button" value="Search" onclick="showMatches()">
-    <span id="keywords"></span>
-  </p>
-  <div class="matches">
-      <p>XA: <span id="xaname"></span>
-     ( <span id="xacontact"></span> )
-      ZL: <span id="zlname"></a></span>(
-      <span id="zlcontact"></a></span>)</p>
-  </div>
-  </form>
+</form>
 
-  <div class="highlight" target="_new" onclick="clearHighlight();" style="width: relative; height:relative;"></div>
+<div class="highlight" target="_new" onclick="clearHighlight();" style="width: relative; height:relative;"></div>
+
+<div id="error" onclick="clearError();">No Matches</div>
 
 
 
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="pax.js"></script>
-<script type="text/javascript" src="map.js"></script>
+<script src="jquery-2.1.1.min.js"></script>
+<script src="select2.min.js"></script>
+<script src="pax.js"></script>
+<script src="map.js"></script>
 </div>
 
 <footer><h5> MIT open license, share with permission, share with credit: <a href="colettetaylor.com">Colette Taylor 2014 </a>, based on Copywrited work by <a href="http://geekatlarge.net/">geekatlarge</a></h5></footer>

@@ -3,8 +3,9 @@
 //spreadsheet in GoogleDocs, so it can be referred
 //to fo quicker reference.
 $(document).ready(function() {
+  $("#e10").select2({
 
-var exhibitors = [
+    exhibitors: [
   { "boothNumber":"3342",
     "exhibitorName":"Comcast",
     "sectionNumber":"1",
@@ -425,22 +426,41 @@ var exhibitors = [
     "leaderContact":"248-535-7778",
     "exhibitorKeywords":"" },
 
-  { "boothNumber":"1438",
-    "exhibitorName":"Sandisk",
-    "sectionNumber":"13",
-    "zoneNumber":"3",
-    "exhibitorAssistant":"Loki",
-    "assistantContact":"248-535-7778",
-    "zoneLeader":"Loki",
-    "leaderContact":"248-535-7778",
-    "exhibitorKeywords":"" },
+  { boothNumber:"1438",
+    exhibitorName:"Sandisk",
+    sectionNumber:"13",
+    zoneNumber:"3",
+    exhibitorAssistant:"Loki",
+    assistantContact:"248-535-7778",
+    zoneLeader:"Loki",
+    leaderContact:"248-535-7778",
+    exhibitorKeywords:"" },
 
 
 ];
+});
+});
 
-function showMatches() {
+/*for (i=0; i<exhibitors.length; i++) {
+  var newBox = document.createElement("div");
+  newBox.setAttribute("id", "section" + i);
+  newBox.setAttribute("class", "section");
+  var pTop = exhibitors[i].posTop;
+  var pRight = exhibitors[i].posRight;
+  var pBottom = exhibitors[i].posBottom;
+  var pLeft = exhibitors[i].posLeft;
+  var pWidth = pRight - pLeft;
+  var pHeight = pBottom - pTop;
+  newBox.setAttribute("style", "position:absolute; left:" + pLeft + "px; top:" + pTop + "px; width:" + pWidth + "px; height:" + pHeight + "px; z-index:9000;");
+  document.body.appendChild(newBox);
+}
+
+
+
+window.showMatches = function() {
   clearError();
   var hitCounter = 0;
+  clearMatches();
   var searchString = document.getElementById("match").value;
   for (i=0; i<exhibitors.length; i++) {
     if ((searchString.trim() !== "") && ((exhibitors[i].boothNumber == searchString) || (exhibitors[i].exhibitorName.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) || (exhibitors[i].exhibitorKeywords.toLowerCase().indexOf(searchString.toLowerCase()) !== -1))) {
@@ -452,17 +472,34 @@ function showMatches() {
     clearForm();
   } else {
     if(searchString.trim() != "") document.getElementById("error").style.display = "block";
+
   }
-  console.log ("xaname")
 }
 
-document.getElementById("keywords").textContent = exhibitors[boothID].exhibitorName + " [" + exhibitors[boothID].exhibitorKeywords + "]";
+window.clearMatches = function() {
+  for (i=0; i<exhibitors.length; i++) {
+    document.getElementById(i).style.display = "none";
+  }
+}
+//for (i=0; i<exhibitors.length; i++) {
+   // document.write("<area shape='rect' coords='" + exhibitors[i].posLeft + "," + exhibitors[i].posTop + "," + exhibitors[i].posRight + "," + exhibitors[i].posBottom + "' onclick='highlightBooth(" + i + ");' title='#" + exhibitors[i].boothNumber + " " + exhibitors[i].exhibitorName + "' alt='#" + exhibitors[i].boothNumber + " " + exhibitors[i].exhibitorName + "'>");
+//  }
+function highlightBooth(boothID)  {
+  var hlDiv = document.getElementById("highlight");
 
-document.getElementById("xaname").textContent = exhibitors[boothID].exhibitorAssistant;
-document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].assistantContact + "'>" + exhibitors[boothID].assistantContact + "</a>";
-document.getElementById("zlname").textContent = exhibitors[boothID].zoneLeader;
-document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].leaderContact + "'>" + exhibitors[boothID].leaderContact + "</a>";
+//  hlDiv.style.width = (exhibitors[boothID].posRight - exhibitors[boothID].posLeft - 9) + "px";
+//  hlDiv.style.height = (exhibitors[boothID].posBottom - exhibitors[boothID].posTop - 9) + "px";
+//  hlDiv.style.top = (exhibitors[boothID].posTop -4) + "px";
+//  hlDiv.style.left = (exhibitors[boothID].posLeft - 4) + "px";
+  hlDiv.style.display = "block";
+  document.getElementById("keywords").textContent = exhibitors[boothID].exhibitorName + " [" + exhibitors[boothID].exhibitorKeywords + "]";
 
+  document.getElementById("xaname").textContent = exhibitors[boothID].exhibitorAssistant;
+  document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].assistantContact + "'>" + exhibitors[boothID].assistantContact + "</a>";
+  document.getElementById("zlname").textContent = exhibitors[boothID].zoneLeader;
+  document.getElementById("xaphone").innerHTML = "<a href='tel:" + exhibitors[boothID].leaderContact + "'>" + exhibitors[boothID].leaderContact + "</a>";
+console.log("xaname")
+};
 
 function clearHighlight() {
   document.getElementById("highlight").style.display = "no";
@@ -482,6 +519,9 @@ function clearAll() {
 
 function showSections() {
   document.getElementById("allsections").style.display = "block";
+  for (i=1; i<=45; i++) {
+    document.write("<div onclick='showSection(" + i + ");'>Section " + i + "</div>");
+  }
 }
 
 function clearSections() {
@@ -489,11 +529,6 @@ function clearSections() {
     document.getElementById("section" + i).style.display ="none";
   }
 }
-
-//for (i=1; i<=47; i++) {
-//  document.write("<div onclick='showSection(" + i + ");'>Section " + i + "</div>");
-//}
-
 
 //for (i=1; i<=5; i++) {
 //  document.write("<div onclick='showZone(" + i + ");'>Zone " + i + "</div>");
